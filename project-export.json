@@ -1,0 +1,70 @@
+{
+  "projectName": "Welong Hair Black November",
+  "description": "Landing page for Welong Hair Black November campaign",
+  "structure": {
+    "components": {
+      "HeroSectionBlackNovember.tsx": "Hero section with Black November branding",
+      "BlackFridayHero.tsx": "Black Friday hero component",
+      "BlackFridayOffers.tsx": "Offers section for Black Friday",
+      "BlackFridayTestimonials.tsx": "Testimonials component",
+      "BlackFridayFAQ.tsx": "FAQ section",
+      "BlackNovemberDecoration.tsx": "Decorative elements",
+      "MarqueeBanner.tsx": "Scrolling banner component",
+      "Countdown.tsx": "Countdown timer",
+      "FixedTopBanner.tsx": "Fixed top banner",
+      "FloatingWhatsApp.tsx": "Floating WhatsApp button",
+      "GiftBox3D.tsx": "3D gift box animation",
+      "GiftDialog.tsx": "Gift dialog component",
+      "RouletteWheel.tsx": "Roulette wheel component",
+      "RouletteDialog.tsx": "Roulette dialog",
+      "HowItWorksRoulette.tsx": "How it works section",
+      "PromotionSectionRoulette.tsx": "Promotion section with roulette",
+      "KitCard.tsx": "Product kit card",
+      "ResultsSection.tsx": "Results section",
+      "UrgencySection.tsx": "Urgency section",
+      "WhatsAppButton.tsx": "WhatsApp button component"
+    },
+    "pages": {
+      "Page3.tsx": "Main Black November landing page",
+      "Index.tsx": "Alternative index page",
+      "NotFound.tsx": "404 page"
+    },
+    "assets": {
+      "images": [
+        "mockup-touca-escova.png",
+        "gift-box-open.png",
+        "gift-box-closed.png",
+        "hero-product.jpg",
+        "results-before-after.jpg"
+      ],
+      "sounds": [
+        "spin.mp3",
+        "win.mp3"
+      ]
+    },
+    "styling": {
+      "tailwind.config.ts": "Tailwind configuration with HSL color system",
+      "index.css": "Global styles and CSS variables"
+    }
+  },
+  "features": [
+    "Black November themed landing page",
+    "Roulette wheel promotion",
+    "3D gift box animation",
+    "Countdown timer",
+    "WhatsApp integration",
+    "Responsive design",
+    "Dark theme",
+    "Testimonials section",
+    "FAQ section",
+    "Product showcase"
+  ],
+  "techStack": {
+    "framework": "React + TypeScript",
+    "bundler": "Vite",
+    "styling": "Tailwind CSS",
+    "uiComponents": "Shadcn UI",
+    "routing": "React Router",
+    "3d": "React Three Fiber"
+  }
+}

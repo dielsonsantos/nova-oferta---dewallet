@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://www.dewalt.com/error/styles/styles.css"
+    />
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <div class="row">
+        <div class="col-3 logoWrapper">
+          <img
+            src="https://www.dewalt.com/error/assets/dewalt_50X_logo@2x.png"
+          />
+        </div>
+
+        <div class="col-1 onlyLargeDevice"></div>
+
+        <div class="col-6 right mainMsgWrapper">
+          <div class="engLishMessage">
+            <div class="subTitle">
+              <span>Site under maintenance</span>
+            </div>
+            <div class="message">
+              <span>
+                We should be back shortly. Thank you for your patience.
+              </span>
+            </div>
+          </div>
+          <div class="translatedMessage">
+            <div class="title">
+              <span>Sitio en mantenimiento</span>
+            </div>
+            <div class="message">
+              <span
+                >Pronto estaremos disponibles nuevamente. Gracias por tu
+                paciencia.</span
+              >
+            </div>
+            <div class="spacer"></div>
+            <div class="title">
+              <span>Stránky jsou v údržbě</span>
+            </div>
+            <div class="message">
+              <span
+                >Brzy bychom se měli vrátit zpět.Děkujeme vám za
+                trpělivost.</span
+              >
+            </div>
+            <div class="spacer"></div>
+            <div class="title">
+              <span>Sito in manutenzione</span>
+            </div>
+            <div class="message">
+              <span
+                >Dovremmo tornare a breve. Grazie per la vostra pazienza.</span
+              >
+            </div>
+            <div class="spacer"></div>
+            <div class="title">
+              <span>Site in onderhoud</span>
+            </div>
+            <div class="message">
+              <span
+                >We zouden snel terug moeten zijn. Bedankt voor je geduld.</span
+              >
+            </div>
+            <div class="spacer"></div>
+            <div class="title">
+              <span>Site under vedligeholdelse</span>
+            </div>
+            <div class="message">
+              <span>Vi burde være tilbage snart. Tak for din tålmodighed.</span>
+            </div>
+            <div class="spacer"></div>
+            <div class="title">
+              <span>Siden under vedlikehold</span>
+            </div>
+            <div class="message">
+              <span
+                >Vi burde være tilbake snart. Takk for din tålmodighet.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Strona w trakcie konserwacji</span>
+            </div>
+            <div class="message">
+              <span
+                >Powinniśmyniedługowrócić.Dziękuję za Twojącierpliwość.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Site în mentenanță</span>
+            </div>
+            <div class="message">
+              <span
+                >Ar trebui să ne întoarcem în curând. Vămulțumesc pentru
+                răbdarea dvs.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Sivusto huollettu</span>
+            </div>
+            <div class="message">
+              <span
+                >Meidän pitäisi palata pian. Kiitos kärsivällisyydestänne.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Le site est en cours de maintenance</span>
+            </div>
+            <div class="message">
+              <span
+                >Nous devrions être de retour très bientôt. Nous vous remercions
+                de votre patience.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Seite wird gewartet</span>
+            </div>
+            <div class="message">
+              <span
+                >Wir sollten in Kürze zurück sein. Wir danken Ihnen für Ihre
+                Geduld.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Nenhum resultado encontrado.Site em Manutenção</span>
+            </div>
+            <div class="message">
+              <span>Voltaremos em breve. Obrigado por sua paciência.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Насайтепроводятсятехническиеработы</span>
+            </div>
+            <div class="message">
+              <span>Мыдолжныскоровернуться.Спасибозатерпеливость.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Stran v vzdrževanju</span>
+            </div>
+            <div class="message">
+              <span>Kmalu bi se morali vrniti. Hvala za vaše potrpljenje.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Stránka je v údržbe</span>
+            </div>
+            <div class="message">
+              <span
+                >Čoskoro by sme sa mali vrátiť.Ďakujeme vám za vašu
+                trpezlivosť</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Site bakımda</span>
+            </div>
+            <div class="message">
+              <span>Birazdan dönmeliyiz. Sabrınız için teşekkürler.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Сайтнатехнічномуобслуговуванні</span>
+            </div>
+            <div class="message">
+              <span>,Миповинніповернутисянезабаром.Дякуютобізатерпіння.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Webbplats under underhåll</span>
+            </div>
+            <div class="message">
+              <span>Vi är tillbaka snart. Tack för ditt tålamod.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Situs dalam perbaikan</span>
+            </div>
+            <div class="message">
+              <span
+                >Kita harus segera kembali. Terima kasih atas kesabaran
+                Anda.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Az oldal karbantartás alatt</span>
+            </div>
+            <div class="message">
+              <span>Hamarosan vissza kell mennünk. Köszönöm a türelmed.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Ητοποθεσίαυπόσυντήρηση</span>
+            </div>
+            <div class="message">
+              <span
+                >Θαπρέπειναεπιστρέψουμεσύντομα.Σαςευχαριστούμεγιατηνυπομονήσας.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Сайтътсеподдържа</span>
+            </div>
+            <div class="message">
+              <span>Трябвадасевърнемскоро.Благодарявизатърпението.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>网站กก 中</span>
+            </div>
+            <div class="message">
+              <span>我 กกก很快就会回来。 感ก您的耐心等待。</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>メンテナンス中のサイト</span>
+            </div>
+            <div class="message">
+              <span
+                >まもなく戻ってくるはずです。お待ちいただいてありがとうございます。</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Sait on hoolduses</span>
+            </div>
+            <div class="message">
+              <span
+                >Peaksime varsti tagasi olema. Tänan kannatlikkuse eest.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Vietne tiek uzturēta</span>
+            </div>
+            <div class="message">
+              <span
+                >Mums drīzvajadzētu atgriezties. Paldies par pacietību.</span
+              >
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Svetainėprižiūrima</span>
+            </div>
+            <div class="message">
+              <span>Netrukus turėtumegrįžti.Ačiū už kantrybę.</span>
+            </div>
+            <div class="spacer"></div>
+
+            <div class="title">
+              <span>Trang web đangđượcbảo trì</span>
+            </div>
+            <div class="message">
+              <span
+                >Chúng tôi sẽtrởlại trong thời gian ngắn.Cảmơn vì sự kiên
+                nhẫncủabạn.</span
+              >
+            </div>
+            <div class="spacer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript"  src="/eg3_kt5j/OZ9/il1/Wrc7CBIIeH/i9XaSkJGzDffLDiGEw/GTNPZSY/EX/NJC3AjSQY"></script></body>
+</html>

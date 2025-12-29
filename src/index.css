@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 120 61% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 120 61% 34%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 120 61% 34%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --christmas-red: 0 100% 50%;
+    --christmas-green: 145 80% 35%;
+    --christmas-gold: 45 100% 51%;
+    
+    --shadow-gold: 0 0 20px hsl(45 100% 51% / 0.6);
+    --shadow-gold-lg: 0 0 30px hsl(45 100% 51% / 0.8), 0 0 60px hsl(45 100% 51% / 0.4);
+  }
+
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 8% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 8% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 6% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 25%;
+    --input: 240 6% 25%;
+    --ring: 340 82% 52%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(340 82% 52%), hsl(320 70% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%), hsl(162 70% 40%));
+    --gradient-hero: linear-gradient(180deg, hsl(142 76% 15%), hsl(240 10% 10%));
+    
+    --shadow-glow: 0 20px 60px -15px hsl(340 82% 52% / 0.5);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --christmas-red: 0 100% 50%;
+    --christmas-green: 145 80% 35%;
+    --christmas-gold: 45 100% 51%;
+    
+    --shadow-gold: 0 0 20px hsl(45 100% 51% / 0.6);
+    --shadow-gold-lg: 0 0 30px hsl(45 100% 51% / 0.8), 0 0 60px hsl(45 100% 51% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Sparkles and Confetti for Gift Animation */
+@keyframes sparkleFloat {
+  0% { 
+    opacity: 0;
+    transform: translate(0, 0) scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(180deg);
+  }
+}
+
+@keyframes confettiFall {
+  0% { 
+    opacity: 0;
+    transform: translateY(-50px) rotate(0deg) scale(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(250px) rotate(720deg) scale(1.2);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 2.5rem;
+  pointer-events: none;
+  z-index: 10;
+  animation: sparkleFloat 1.5s ease-out forwards;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+}
+
+.sparkle-1 { --tx: -140px; --ty: -140px; animation-delay: 0.8s; }
+.sparkle-2 { --tx: 140px; --ty: -140px; animation-delay: 0.9s; }
+.sparkle-3 { --tx: -140px; --ty: 120px; animation-delay: 1s; }
+.sparkle-4 { --tx: 140px; --ty: 120px; animation-delay: 1.1s; }
+
+.confetti {
+  position: absolute;
+  font-size: 2.5rem;
+  pointer-events: none;
+  z-index: 10;
+  top: -50px;
+  animation: confettiFall 2.5s ease-out forwards;
+  filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.6));
+}
+
+.confetti-1 { left: 25%; animation-delay: 1.2s; }
+.confetti-2 { left: 50%; animation-delay: 1.3s; }
+.confetti-3 { left: 75%; animation-delay: 1.4s; }
+
+/* Christmas Styles */
+.bg-gradient-dark {
+  background: linear-gradient(180deg, hsl(240 10% 5%), hsl(240 10% 10%));
+}
+
+.shadow-glow {
+  box-shadow: 0 10px 40px -10px hsl(var(--christmas-gold) / 0.4);
+}
+
+.bg-christmas-gradient {
+  background: linear-gradient(135deg, hsl(var(--christmas-red)), hsl(var(--christmas-green)));
+}

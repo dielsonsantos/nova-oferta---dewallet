@@ -15,7 +15,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/ingles" replace />} />
+          <Route path="/" element={<Home lang="en" />} />
           <Route path="/portugues" element={<Home lang="pt" />} />
           <Route path="/ingles" element={<Home lang="en" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

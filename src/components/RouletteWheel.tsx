@@ -455,7 +455,7 @@ export const RouletteWheel = ({ lang = 'pt' }: { lang?: 'pt' | 'en' }) => {
                   </p>
                   {spinCountRef.current === 2 && /75%/i.test(result) && (
                     <a
-                      href="https://oferta.blackfridaywelong.shop/"
+                      href="https://5qxzc2-13.myshopify.com/products/xr-compact-power-kit"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block w-full mt-3"

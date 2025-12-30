@@ -10,9 +10,10 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 interface RouletteDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  lang?: 'pt' | 'en';
 }
 
-export const RouletteDialog = ({ open, onOpenChange }: RouletteDialogProps) => {
+export const RouletteDialog = ({ open, onOpenChange, lang = 'pt' }: RouletteDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -22,11 +23,11 @@ export const RouletteDialog = ({ open, onOpenChange }: RouletteDialogProps) => {
         }}>
 
         <VisuallyHidden>
-          <DialogTitle>Roleta de Prêmios de Natal</DialogTitle>
-          <DialogDescription>Gire a roleta para ganhar descontos e prêmios especiais</DialogDescription>
+          <DialogTitle>{lang === 'pt' ? "Roleta de Prêmios de Natal" : "Christmas Prize Wheel"}</DialogTitle>
+          <DialogDescription>{lang === 'pt' ? "Gire a roleta para ganhar descontos e prêmios especiais" : "Spin the wheel to win discounts and special prizes"}</DialogDescription>
         </VisuallyHidden>
 
-        <RouletteWheel />
+        <RouletteWheel lang={lang} />
       </DialogContent>
     </Dialog>
   );

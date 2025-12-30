@@ -5,11 +5,12 @@ import { format } from "date-fns";
 
 export const PromotionSectionRoulette = ({ lang = 'pt' }: { lang?: 'pt' | 'en' }) => {
   const [showRoulette, setShowRoulette] = useState(false);
-  const today = format(new Date(), "dd/MM/yy");
+  const dateFormat = lang === 'pt' ? "dd/MM/yy" : "MM/dd/yy";
+  const today = format(new Date(), dateFormat);
 
   return (
     <>
-      <RouletteDialog open={showRoulette} onOpenChange={setShowRoulette} />
+      <RouletteDialog open={showRoulette} onOpenChange={setShowRoulette} lang={lang} />
       <section className="py-6 px-4 bg-white relative overflow-hidden">
         <div className="max-w-2xl mx-auto text-center relative z-10">
           <h2 className="text-xl md:text-2xl font-bold mb-6 uppercase flex items-center justify-center gap-2">

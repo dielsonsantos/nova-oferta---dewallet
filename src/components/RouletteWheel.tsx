@@ -1,21 +1,33 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
-const segments = [
-  { text: "15%\nde\ndesconto", colorStart: "#FFC405", colorEnd: "#FFC405", textColor: "#000000", weight: 20 },
-  { text: "Tente\noutra\nvez", colorStart: "#314017", colorEnd: "#314017", textColor: "#fff", weight: 25 },
-  { text: "10%\nde\ndesconto", colorStart: "#bd1919", colorEnd: "#bd1919", textColor: "#fff", weight: 12 },
-  { text: "7%\nde\ndesconto", colorStart: "#0fd6d3", colorEnd: "#0fd6d3", textColor: "#fff", weight: 10 },
-  { text: "15%\nde\ndesconto", colorStart: "#a10fd6", colorEnd: "#a10fd6", textColor: "#fff", weight: 15 },
-  { text: "15%\nde\ndesconto", colorStart: "#FFC405", colorEnd: "#FFC405", textColor: "#000000", weight: 5 },
-  { text: "Tente\noutra\nvez", colorStart: "#314017", colorEnd: "#314017", textColor: "#fff", weight: 13 },
+const segmentsPT = [
+  { text: "40%\nde\ndesconto", colorStart: "#e61e1e", colorEnd: "#e61e1e", textColor: "#fff", weight: 15 },
+  { text: "30%\nde\ndesconto", colorStart: "#05bef7", colorEnd: "#05bef7", textColor: "#fff", weight: 12 },
+  { text: "75%\nde\ndesconto", colorStart: "#FFC303", colorEnd: "#FFC303", textColor: "#fff", weight: 20 },
+  { text: "Tente\noutra\nvez", colorStart: "#050000", colorEnd: "#050000", textColor: "#fff", weight: 25 },
+  { text: "50%\nde\ndesconto", colorStart: "#ec0ff7", colorEnd: "#ec0ff7", textColor: "#fff", weight: 10 },
+  { text: "75%\nde\ndesconto", colorStart: "#FFC303", colorEnd: "#FFC303", textColor: "#fff", weight: 5 },
+  { text: "Tente\noutra\nvez", colorStart: "#050000", colorEnd: "#050000", textColor: "#fff", weight: 13 },
 ];
 
-const TEXT_OFFSET = 65;
+const segmentsEN = [
+  { text: "40%\nOFF", colorStart: "#e61e1e", colorEnd: "#e61e1e", textColor: "#fff", weight: 15 },
+  { text: "30%\nOFF", colorStart: "#05bef7", colorEnd: "#05bef7", textColor: "#fff", weight: 12 },
+  { text: "75%\nOFF", colorStart: "#FFC303", colorEnd: "#FFC303", textColor: "#fff", weight: 20 },
+  { text: "Try\nAgain", colorStart: "#050000", colorEnd: "#050000", textColor: "#fff", weight: 25 },
+  { text: "50%\nOFF", colorStart: "#ec0ff7", colorEnd: "#ec0ff7", textColor: "#fff", weight: 10 },
+  { text: "75%\nOFF", colorStart: "#FFC303", colorEnd: "#FFC303", textColor: "#fff", weight: 5 },
+  { text: "Try\nAgain", colorStart: "#050000", colorEnd: "#050000", textColor: "#fff", weight: 13 },
+];
+
+
+const TEXT_OFFSET = -89;
 const POINTER_ANGLE_DEG = 270;
 const TRY_AGAIN_TOKEN = "__TRY_AGAIN__";
 
-export const RouletteWheel = () => {
+export const RouletteWheel = ({ lang = 'pt' }: { lang?: 'pt' | 'en' }) => {
+  const segments = lang === 'pt' ? segmentsPT : segmentsEN;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerRef = useRef<HTMLDivElement>(null);
 
@@ -165,7 +177,7 @@ export const RouletteWheel = () => {
       ctx.save();
       ctx.rotate(centerA);
 
-      if (seg.text !== "Tente\noutra\nvez") {
+      if (seg.text !== "Tente\noutra\nvez" && seg.text !== "Try\nAgain") {
         const lines = seg.text.split("\n");
         const fontSize = 16;
         const lineHeight = fontSize * 1.1;
@@ -237,7 +249,7 @@ export const RouletteWheel = () => {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillStyle = "#fff";
-    ctx.fillText("GIRE", 0, 0);
+    ctx.fillText(lang === 'pt' ? "GIRE" : "SPIN", 0, 0);
     ctx.restore();
 
     ctx.restore();
@@ -264,7 +276,7 @@ export const RouletteWheel = () => {
     const idx = lastTargetIndexRef.current!;
     setWinningIndex(idx);
     const seg = segments[idx];
-    const isTryAgain = seg.text === "Tente\noutra\nvez";
+    const isTryAgain = seg.text === "Tente\noutra\nvez" || seg.text === "Try\nAgain";
     const resultText = isTryAgain ? TRY_AGAIN_TOKEN : seg.text.replace(/\n/g, " ");
     setResult(resultText);
     setIsSpinning(false);
@@ -282,7 +294,7 @@ export const RouletteWheel = () => {
       setShowSpinButton(false);
     }
 
-    if (spinCountRef.current === 2 && /15%/i.test(seg.text)) {
+    if (spinCountRef.current === 2 && /75%/i.test(seg.text)) {
       setShowWheel(false);
       setShowSpinButton(false);
     }
@@ -378,10 +390,10 @@ export const RouletteWheel = () => {
     <div className="flex flex-col items-center justify-center gap-8 py-8">
       <div className="text-center space-y-3">
         <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-          Você acaba de ganhar um presente!
+          {lang === 'pt' ? "Você acaba de ganhar um presente!" : "You just won a gift!"}
         </h2>
         <p className="text-lg md:text-xl font-semibold text-white">
-          Gire a roleta para ganhar seu Mega Desconto!
+          {lang === 'pt' ? "Gire a roleta para ganhar seu Mega Desconto!" : "Spin the wheel to win your Mega Discount!"}
         </p>
       </div>
 
@@ -405,7 +417,7 @@ export const RouletteWheel = () => {
             onClick={spinWheel}
             disabled={isSpinning}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140px] h-[140px] rounded-full cursor-pointer hover:scale-105 transition-transform disabled:cursor-not-allowed disabled:hover:scale-100 z-20"
-            aria-label="Girar roleta"
+            aria-label={lang === 'pt' ? "Girar roleta" : "Spin wheel"}
           />
         </div>
       )}
@@ -418,28 +430,30 @@ export const RouletteWheel = () => {
               {result === TRY_AGAIN_TOKEN ? (
                 <div className="space-y-3">
                   <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-bold tracking-wide">
-                    🔁 Giro grátis liberado
+                    {lang === 'pt' ? "🔁 Giro grátis liberado" : "🔁 Free spin unlocked"}
                   </span>
-                  <h3 className="text-2xl font-extrabold text-gray-900">Não foi dessa vez</h3>
+                  <h3 className="text-2xl font-extrabold text-gray-900">{lang === 'pt' ? "Não foi dessa vez" : "Not this time"}</h3>
                   <p className="text-base leading-relaxed text-gray-600">
-                    Você ganhou um giro <strong>EXTRA</strong> grátis. Toque em <em>GIRAR GRÁTIS AGORA</em> para tentar novamente!
+                    {lang === 'pt'
+                      ? <>Você ganhou um giro <strong>EXTRA</strong> grátis. Toque em <em>GIRAR GRÁTIS AGORA</em> para tentar novamente!</>
+                      : <>You won an <strong>EXTRA</strong> free spin. Tap <em>SPIN FREE NOW</em> to try again!</>}
                   </p>
                   <Button
                     onClick={handleRetry}
                     className="w-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 text-white font-bold"
                   >
-                    🎯 GIRAR GRÁTIS AGORA
+                    {lang === 'pt' ? "🎯 GIRAR GRÁTIS AGORA" : "🎯 SPIN FREE NOW"}
                   </Button>
                 </div>
               ) : (
                 <>
                   <div className="inline-block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm tracking-wider">
-                    DESCONTO EXCLUSIVO
+                    {lang === 'pt' ? "DESCONTO EXCLUSIVO" : "EXCLUSIVE DISCOUNT"}
                   </div>
                   <p className="text-5xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                     {result}
                   </p>
-                  {spinCountRef.current === 2 && /15%/i.test(result) && (
+                  {spinCountRef.current === 2 && /75%/i.test(result) && (
                     <a
                       href="https://oferta.blackfridaywelong.shop/"
                       target="_blank"
@@ -447,7 +461,7 @@ export const RouletteWheel = () => {
                       className="inline-block w-full mt-3"
                     >
                       <Button className="w-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 text-white font-bold">
-                        🌐 IR PARA O SITE
+                        {lang === 'pt' ? "🌐 IR PARA O SITE" : "🌐 GO TO SITE"}
                       </Button>
                     </a>
                   )}
@@ -464,7 +478,9 @@ export const RouletteWheel = () => {
           disabled={isSpinning}
           className="w-full max-w-md bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 text-white text-xl shadow-2xl py-8 disabled:opacity-50"
         >
-          {isSpinning ? "GIRANDO..." : "🎰 GIRE PARA GANHAR!"}
+          {isSpinning
+            ? (lang === 'pt' ? "GIRANDO..." : "SPINNING...")
+            : (lang === 'pt' ? "🎰 GIRE PARA GANHAR!" : "🎰 SPIN TO WIN!")}
         </Button>
       )}
     </div>

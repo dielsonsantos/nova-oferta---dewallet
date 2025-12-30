@@ -14,7 +14,7 @@ export const HeroSectionChristmas = ({ lang = 'pt' }: { lang?: 'pt' | 'en' }) =>
         <h2 className="text-xl md:text-2xl font-bold mb-6 text-christmas-gold" style={{
           textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.5)'
         }}>
-          Chave de Impacto e Furadeira em uma Única Ferramenta
+          {lang === 'pt' ? "Chave de Impacto e Furadeira em uma Única Ferramenta" : "Impact Driver and Drill in a Single Tool"}
         </h2>
 
         <div className="mb-6">
@@ -30,6 +30,6 @@ export const HeroSectionChristmas = ({ lang = 'pt' }: { lang?: 'pt' | 'en' }) =>
       </div>
     </div>
 
-    <MarqueeBanner />
+    <MarqueeBanner lang={lang} />
   </section>;
 };

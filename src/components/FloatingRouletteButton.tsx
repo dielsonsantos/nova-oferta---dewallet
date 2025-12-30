@@ -24,7 +24,7 @@ export const FloatingRouletteButton = ({ lang = 'pt' }: { lang?: 'pt' | 'en' }) 
 
     return (
         <>
-            <RouletteDialog open={showRoulette} onOpenChange={setShowRoulette} />
+            <RouletteDialog open={showRoulette} onOpenChange={setShowRoulette} lang={lang} />
             <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-black/90 to-transparent flex justify-center animate-in slide-in-from-bottom-4 duration-500 pb-6 pt-8 pointer-events-none">
                 <Button
                     size="lg"

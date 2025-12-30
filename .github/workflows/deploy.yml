@@ -13,6 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -22,9 +33,7 @@ jobs:
           port: 21
           security: loose
           server-dir: /public_html/
-          local-dir: ./
+          local-dir: ./dist/
           exclude: |
             **/.git*
             **/.github/**
-            **/.gitignore
-            **/node_modules/**
